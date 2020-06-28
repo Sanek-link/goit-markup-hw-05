@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  width: 300px;
+  height: 300px;
+  perspective: 600px;
+  border: solid 1px #757575;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+
+  transition: transform 0.8s linear;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1.7;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.front.cat {
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/cat.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.front.bird {
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/bird.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.front.hedgehog {
+  width: 300px;
+  height: 300px;
+  background-image: url(../img/hengehog.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+
+  backface-visibility: hidden;
+}
+
+.back {
+  background-color: rgb(3, 3, 49);
+  transform: rotateY(-180deg);
+}
+
+.scene:hover .card {
+  transform: rotateY(-180deg);
+}
